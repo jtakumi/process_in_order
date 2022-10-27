@@ -55,12 +55,14 @@ def main():
         id[n] = d['data'][n]['id']
         before_value[n] = before_d['data'][n]['value']
         before_id[n] = before_d['data'][n]['id']
-        if id[n] in before_id:
-            delta[n] = value[n] - before_value[n]
-        else:
-            delta[n]  = value[n]
-        data.append({'id':id[n],'value':value[n],'before_value':before_value[n],'delta':delta[n]})
         n+=1
+    for k in range(len(value)):
+        if id[k] in before_id:
+            delta[k] = value[k] - before_value[k]
+        else:
+            delta[k]  = value[k]
+        data.append({'id':id[k],'value':value[k],'before_value':before_value[k],'delta':delta[k]})
+        
     data.sort(key=lambda x:x['id'])
     output = {'current_data':file_name,'before_data':b_file_name,'data':data}
     json_w(output,f_num)

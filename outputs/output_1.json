@@ -1,0 +1,18 @@
+{
+  "current_data": "dataset_1.json",
+  "before_data": "dataset_0.json",
+  "data": [
+    {
+      "id": 247,
+      "value": 0.6062872861763929,
+      "before_value": 0.6766845319022587,
+      "delta": 0.6062872861763929
+    },
+    {
+      "id": 480,
+      "value": 0.3928096206163597,
+      "before_value": 0.6888698469880328,
+      "delta": 0.3928096206163597
+    }
+  ]
+}
