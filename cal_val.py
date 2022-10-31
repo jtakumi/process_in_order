@@ -50,7 +50,7 @@ def main():
     b_file_name= 'dataset_' + str(bf_num) + '.json'
     before_d =json_r(b_file_name)
     n=0
-    for i in d:
+    for i in d['data']:
         value[n] = d['data'][n]['value']
         id[n] = d['data'][n]['id']
         before_value[n] = before_d['data'][n]['value']
