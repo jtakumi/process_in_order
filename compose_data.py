@@ -16,7 +16,7 @@ def main():
     for i in range(100):
         data = []
         for j in range(50):
-            val_seed = random.random()
+            val_seed = int(random.random() * 100)
             id_seed = random.randint(1,1000)
             data.append({'id':id_seed,'value':val_seed})
         output = {'file_number':i,'data':data}
