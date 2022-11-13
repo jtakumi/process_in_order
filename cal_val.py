@@ -20,8 +20,8 @@ def json_w(data,f_num):
     with open(f_name,"w") as f:
         json.dump(data,f,indent=2,ensure_ascii=False)
     write_file_name(f_name,'output.dat')
-    if f_num >=99:
-        f_num =1
+    if f_num >= 99:
+        f_num =0
     else:
         f_num +=1
     next_dataset = 'dataset_' + str(f_num) + '.json'

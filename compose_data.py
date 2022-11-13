@@ -13,10 +13,10 @@ def compose_data(data,fn):
 
 
 def main():
-    for i in range(100):
+    for i in range(3):
         data = []
         for j in range(50):
-            val_seed = random.random()
+            val_seed = int(random.random() * 100)
             id_seed = random.randint(1,1000)
             data.append({'id':id_seed,'value':val_seed})
         output = {'file_number':i,'data':data}
@@ -25,6 +25,12 @@ def main():
     save_data(fn)
     print("composed datas")
 
+""" if i ==0 and j == 10:
+                id_seed = 1100
+            elif i ==2 and j ==20:
+                id_seed = 1200
+            else
+:"""
 
 if __name__ == '__main__':
     main()
