@@ -1,4 +1,5 @@
 import random,json,os
+from datetime import timedelta,timezone,datetime
 output = {}
 
 def save_data(file_name):
@@ -13,24 +14,20 @@ def compose_data(data,fn):
 
 
 def main():
-    for i in range(3):
+    for i in range(100):
         data = []
         for j in range(50):
             val_seed = int(random.random() * 100)
             id_seed = random.randint(1,1000)
             data.append({'id':id_seed,'value':val_seed})
-        output = {'file_number':i,'data':data}
+        JST = timezone(timedelta(hours=+9), 'JST')
+        time_seed = datetime.now(JST)
+        time = time_seed.strftime('%Y%m%dT%H%M%S+09:00')
+        output = {'file_number':i,'time':time,'data':data}
         fn = "dataset_" + str(i) + ".json"
         compose_data(output,fn)
     save_data(fn)
     print("composed datas")
-
-""" if i ==0 and j == 10:
-                id_seed = 1100
-            elif i ==2 and j ==20:
-                id_seed = 1200
-            else
-:"""
 
 if __name__ == '__main__':
     main()
